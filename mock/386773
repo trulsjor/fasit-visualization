@@ -1,0 +1,377 @@
+{
+  "application": "gosys",
+  "environment": "p",
+  "version": "8.0.13",
+  "nodes": [],
+  "selftest": "/gosys/internal/selftest",
+  "cluster": {
+    "name": "gosysCluster",
+    "ref": "https://fasit.adeo.no/api/v2/environments/p/clusters/gosysCluster"
+  },
+  "appconfig": {
+    "ref": "https://fasit.adeo.no/api/v2/applicationinstances/386773/appconfig"
+  },
+  "exposedresources": [],
+  "usedresources": [
+    {
+      "id": 396583,
+      "revison": 396585,
+      "alias": "srvGosys",
+      "type": "credential",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396583"
+    },
+    {
+      "id": 1151877,
+      "revison": 1151880,
+      "alias": "srvgosys",
+      "type": "certificate",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1151877"
+    },
+    {
+      "id": 870728,
+      "revison": 1196729,
+      "alias": "virksomhet:BehandleSak_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/870728"
+    },
+    {
+      "id": 779823,
+      "revison": 1196727,
+      "alias": "virksomhet:Henvendelse_v3",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/779823"
+    },
+    {
+      "id": 242682,
+      "revison": 242683,
+      "alias": "tjenestebuss",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/242682"
+    },
+    {
+      "id": 1796484,
+      "revison": 1796485,
+      "alias": "virksomhet:OrganisasjonEnhet_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1796484"
+    },
+    {
+      "id": 238552,
+      "revison": 238553,
+      "alias": "serviceGateway",
+      "type": "webservicegateway",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/238552"
+    },
+    {
+      "id": 443695,
+      "revison": 1137590,
+      "alias": "wasDmgr",
+      "type": "deploymentmanager",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/443695"
+    },
+    {
+      "id": 396532,
+      "revison": 396533,
+      "alias": "modia",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396532"
+    },
+    {
+      "id": 779826,
+      "revison": 1196728,
+      "alias": "virksomhet:Henvendelsebehandling_v3",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/779826"
+    },
+    {
+      "id": 779827,
+      "revison": 1196726,
+      "alias": "virksomhet:Oppgavebehandling_v3",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/779827"
+    },
+    {
+      "id": 1357622,
+      "revison": 1357623,
+      "alias": "virksomhet:Notat_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1357622"
+    },
+    {
+      "id": 870729,
+      "revison": 1540103,
+      "alias": "virksomhet:Sak_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/870729"
+    },
+    {
+      "id": 357713,
+      "revison": 357716,
+      "alias": "wsadminUser",
+      "type": "credential",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/357713"
+    },
+    {
+      "id": 1722155,
+      "revison": 1724627,
+      "alias": "GosysOracleDS",
+      "type": "datasource",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1722155"
+    },
+    {
+      "id": 870731,
+      "revison": 1715696,
+      "alias": "virksomhet:Organisasjon_v4",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/870731"
+    },
+    {
+      "id": 396511,
+      "revison": 396512,
+      "alias": "brevklientUrl",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396511"
+    },
+    {
+      "id": 396507,
+      "revison": 396508,
+      "alias": "rutingaddress",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396507"
+    },
+    {
+      "id": 716571,
+      "revison": 716572,
+      "alias": "securityTokenService",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/716571"
+    },
+    {
+      "id": 396526,
+      "revison": 396527,
+      "alias": "directoryservice",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396526"
+    },
+    {
+      "id": 1151067,
+      "revison": 1164554,
+      "alias": "gosysSelftestProperties",
+      "type": "applicationproperties",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1151067"
+    },
+    {
+      "id": 779825,
+      "revison": 1196725,
+      "alias": "virksomhet:Oppgave_v3",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/779825"
+    },
+    {
+      "id": 396528,
+      "revison": 396529,
+      "alias": "institutionservice",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396528"
+    },
+    {
+      "id": 396509,
+      "revison": 396510,
+      "alias": "rutingaddress_ws",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396509"
+    },
+    {
+      "id": 868590,
+      "revison": 868591,
+      "alias": "ainntekt",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/868590"
+    },
+    {
+      "id": 396534,
+      "revison": 396535,
+      "alias": "personkort",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "application": "gosys"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/396534"
+    },
+    {
+      "id": 1151481,
+      "revison": 1324771,
+      "alias": "virksomhet:Dialog_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1151481"
+    },
+    {
+      "id": 1732091,
+      "revison": 1740662,
+      "alias": "coregroupService",
+      "type": "baseurl",
+      "scope": {
+        "environmentclass": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1732091"
+    },
+    {
+      "id": 238560,
+      "revison": 244719,
+      "alias": "ldap",
+      "type": "ldap",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/238560"
+    },
+    {
+      "id": 1357620,
+      "revison": 1357621,
+      "alias": "virksomhet:ArbeidOgAktivitetSak_v1",
+      "type": "webserviceendpoint",
+      "scope": {
+        "environmentclass": "p",
+        "zone": "fss",
+        "environment": "p"
+      },
+      "ref": "https://fasit.adeo.no/api/v2/resources/1357620"
+    }
+  ],
+  "missingresources": [],
+  "id": 386773,
+  "created": "2014-05-15T09:45:32.593",
+  "updated": "2016-09-24T10:34:10.405",
+  "lifecycle": {},
+  "accesscontrol": {},
+  "links": {
+    "self": "https://fasit.adeo.no/api/v2/applicationinstances/386773",
+    "revisions": "https://fasit.adeo.no/api/v2/applicationinstances/386773/revisions"
+  }
+}

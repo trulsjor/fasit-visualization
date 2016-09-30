@@ -1,0 +1,135 @@
+{
+  "type": "baseurl",
+  "alias": "coregroupService",
+  "scope": {
+    "environmentclass": "p"
+  },
+  "properties": {
+    "url": "https://coregroups.adeo.no/"
+  },
+  "secrets": {},
+  "files": {},
+  "exposedby": {
+    "application": "coregroups",
+    "environment": "p",
+    "version": "1.0.25",
+    "ref": "https://fasit.adeo.no/api/v2/applicationinstances/1684520"
+  },
+  "usedbyapplications": [
+    {
+      "application": "kuhr",
+      "environment": "p",
+      "version": "8.0.0.37",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/381940"
+    },
+    {
+      "application": "gosys",
+      "environment": "p",
+      "version": "8.0.13",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/386773"
+    },
+    {
+      "application": "ruting",
+      "environment": "p",
+      "version": "5.0.7",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/392370"
+    },
+    {
+      "application": "gsak",
+      "environment": "p",
+      "version": "7.0.8",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/392815"
+    },
+    {
+      "application": "norg",
+      "environment": "p",
+      "version": "3.3.0",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/392931"
+    },
+    {
+      "application": "sapo",
+      "environment": "p",
+      "version": "7.4.5.117",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/540900"
+    },
+    {
+      "application": "kuhl",
+      "environment": "p",
+      "version": "3.15.2",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/540901"
+    },
+    {
+      "application": "bisys",
+      "environment": "p",
+      "version": "3.22.1.9",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/545444"
+    },
+    {
+      "application": "bisys-batch",
+      "environment": "p",
+      "version": "3.22.1.9",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/558016"
+    },
+    {
+      "application": "pensjon-sbs",
+      "environment": "p",
+      "version": "8.8.21",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/570615"
+    },
+    {
+      "application": "pensjon-fss",
+      "environment": "p",
+      "version": "8.8.21",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/572267"
+    },
+    {
+      "application": "frikort",
+      "environment": "p",
+      "version": "3.8.6",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/639205"
+    },
+    {
+      "application": "eia",
+      "environment": "p",
+      "version": "5.14.14",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/655249"
+    },
+    {
+      "application": "mot",
+      "environment": "p",
+      "version": "8.8.2",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/764086"
+    },
+    {
+      "application": "ondemandbrev",
+      "environment": "p",
+      "version": "2.0.8",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/764087"
+    },
+    {
+      "application": "oppdrag",
+      "environment": "p",
+      "version": "6.0.3",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/764089"
+    },
+    {
+      "application": "joark",
+      "environment": "p",
+      "version": "14.0.3",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/771147"
+    }
+  ],
+  "dodgy": false,
+  "id": 1732091,
+  "created": "2016-08-29T12:33:23.15",
+  "updated": "2016-09-01T16:12:39.264",
+  "lifecycle": {},
+  "accesscontrol": {
+    "environmentclass": "p",
+    "adgroups": []
+  },
+  "links": {
+    "self": "https://fasit.adeo.no/api/v2/resources/1732091",
+    "revisions": "https://fasit.adeo.no/api/v2/resources/1732091/revisions"
+  }
+}

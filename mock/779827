@@ -1,0 +1,55 @@
+{
+  "type": "webserviceendpoint",
+  "alias": "virksomhet:Oppgavebehandling_v3",
+  "scope": {
+    "environmentclass": "p",
+    "zone": "fss",
+    "environment": "p"
+  },
+  "properties": {
+    "securityToken": "LTPA",
+    "endpointUrl": "https://wasapp.adeo.no/nav-gsak-ws/OppgavebehandlingV3",
+    "wsdlUrl": "http://maven.adeo.no/nexus/content/groups/public/no/nav/tjenester/fim/nav-fim-oppgavebehandling-v3-tjenestespesifikasjon/3.0.0/nav-fim-oppgavebehandling-v3-tjenestespesifikasjon-3.0.0.zip"
+  },
+  "secrets": {},
+  "files": {},
+  "exposedby": {
+    "application": "gsak",
+    "environment": "p",
+    "version": "7.0.8",
+    "ref": "https://fasit.adeo.no/api/v2/applicationinstances/392815"
+  },
+  "usedbyapplications": [
+    {
+      "application": "modiabrukerdialog",
+      "environment": "p",
+      "version": "9.0.4",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/240379"
+    },
+    {
+      "application": "gosys",
+      "environment": "p",
+      "version": "8.0.13",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/386773"
+    },
+    {
+      "application": "dialogstyring",
+      "environment": "p",
+      "version": "6.3.6",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/763554"
+    }
+  ],
+  "dodgy": false,
+  "id": 779827,
+  "created": "2014-12-06T13:45:29.587",
+  "updated": "2014-12-06T13:45:29.587",
+  "lifecycle": {},
+  "accesscontrol": {
+    "environmentclass": "p",
+    "adgroups": []
+  },
+  "links": {
+    "self": "https://fasit.adeo.no/api/v2/resources/779827",
+    "revisions": "https://fasit.adeo.no/api/v2/resources/779827/revisions"
+  }
+}

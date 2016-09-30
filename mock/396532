@@ -1,0 +1,40 @@
+{
+  "type": "baseurl",
+  "alias": "modia",
+  "scope": {
+    "environmentclass": "p",
+    "zone": "fss"
+  },
+  "properties": {
+    "url": "https://modapp.adeo.no/modiabrukerdialog"
+  },
+  "secrets": {},
+  "files": {},
+  "usedbyapplications": [
+    {
+      "application": "gosys",
+      "environment": "p",
+      "version": "8.0.13",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/386773"
+    },
+    {
+      "application": "pensjon-fss",
+      "environment": "p",
+      "version": "8.8.21",
+      "ref": "https://fasit.adeo.no/api/v2/applicationinstances/572267"
+    }
+  ],
+  "dodgy": false,
+  "id": 396532,
+  "created": "2014-05-22T14:34:46.616",
+  "updated": "2014-05-22T14:34:46.616",
+  "lifecycle": {},
+  "accesscontrol": {
+    "environmentclass": "p",
+    "adgroups": []
+  },
+  "links": {
+    "self": "https://fasit.adeo.no/api/v2/resources/396532",
+    "revisions": "https://fasit.adeo.no/api/v2/resources/396532/revisions"
+  }
+}

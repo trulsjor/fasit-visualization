@@ -1,0 +1,378 @@
+  {
+    "application": "gosys",
+    "environment": "p",
+    "version": "8.0.13",
+    "nodes": [],
+    "selftest": "/gosys/internal/selftest",
+    "cluster": {
+      "name": "gosysCluster",
+      "application": "APP-NAME"
+    },
+    "appconfig": {
+      "application": "APP-NAME"
+    },
+    "exposedresources": [],
+    "children": [
+      {
+        "id": 868590,
+        "direction": "uses",
+
+        "alias": "ainntekt",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 779826,
+        "direction": "uses",
+        "alias": "virksomhet:Henvendelsebehandling_v3",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396583,
+        "direction": "uses",
+        "alias": "srvGosys",
+        "type": "credential",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 238560,
+        "direction": "uses",
+        "alias": "ldap",
+        "type": "ldap",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1732091,
+        "direction": "uses",
+        "alias": "coregroupService",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396526,
+        "direction": "uses",
+        "alias": "directoryservice",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1357622,
+        "direction": "uses",
+        "alias": "virksomhet:Notat_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1357620,
+        "direction": "uses",
+        "alias": "virksomhet:ArbeidOgAktivitetSak_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 870731,
+        "direction": "uses",
+        "alias": "virksomhet:Organisasjon_v4",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396511,
+        "direction": "uses",
+        "alias": "brevklientUrl",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1151877,
+        "direction": "uses",
+        "alias": "srvgosys",
+        "type": "certificate",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 870728,
+        "direction": "uses",
+        "alias": "virksomhet:BehandleSak_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 238552,
+        "direction": "uses",
+        "alias": "serviceGateway",
+        "type": "webservicegateway",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1151481,
+        "direction": "uses",
+        "alias": "virksomhet:Dialog_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 779823,
+        "direction": "uses",
+        "alias": "virksomhet:Henvendelse_v3",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396532,
+        "direction": "uses",
+        "alias": "modia",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1722155,
+        "direction": "uses",
+        "alias": "GosysOracleDS",
+        "type": "datasource",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396507,
+        "direction": "uses",
+        "alias": "rutingaddress",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1151067,
+        "direction": "uses",
+        "alias": "gosysSelftestProperties",
+        "type": "applicationproperties",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 870729,
+        "direction": "uses",
+        "alias": "virksomhet:Sak_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 357713,
+        "direction": "uses",
+        "alias": "wsadminUser",
+        "type": "credential",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396509,
+        "direction": "uses",
+        "alias": "rutingaddress_ws",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 779827,
+        "direction": "uses",
+        "alias": "virksomhet:Oppgavebehandling_v3",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396528,
+        "direction": "uses",
+        "alias": "institutionservice",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 443695,
+        "direction": "uses",
+        "alias": "wasDmgr",
+        "type": "deploymentmanager",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 396534,
+        "direction": "uses",
+        "alias": "personkort",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "application": "gosys"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 779825,
+        "direction": "uses",
+        "alias": "virksomhet:Oppgave_v3",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 716571,
+        "direction": "exposes",
+        "alias": "securityTokenService",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 1796484,
+        "direction": "exposes",
+        "alias": "virksomhet:OrganisasjonEnhet_v1",
+        "type": "webserviceendpoint",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      },
+      {
+        "id": 242682,
+        "direction": "exposes",
+        "alias": "tjenestebuss",
+        "type": "baseurl",
+        "scope": {
+          "environmentclass": "p",
+          "zone": "fss",
+          "environment": "p"
+        },
+        "application": "APP-NAME"
+      }
+    ],
+    "missingresources": [],
+    "id": 386773,
+    "created": "2014-05-15T09:45:32.593",
+    "updated": "2016-09-24T10:34:10.405",
+    "lifecycle": {},
+    "accesscontrol": {},
+    "links": {
+      "self": "https://fasit.adeo.no/api/v2/applicationinstances/386773",
+      "revisions": "https://fasit.adeo.no/api/v2/applicationinstances/386773/revisions"
+    }
+  }
