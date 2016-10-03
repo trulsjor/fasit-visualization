@@ -1,7 +1,51 @@
-  {
-    "application": "gosys",
-    "environment": "p",
-    "version": "8.0.13",
+{
+  "application": "gosys",
+  "environment": "p",
+  "version": "8.0.13",
+  "children" : [
+    {
+      "application" : "balle",
+      "version" : "69",
+      "resources" : [
+        {
+          "type" : "ws",
+          "alias": "alias"
+        }
+      ]
+
+
+    }
+]
+}
+
+
+  'coregroups' : { type: 'baseurl',
+  alias: 'coregroupService',
+  application: 'coregroups',
+  version: '1.0.25',
+  environment: 'p' },
+'gsak' : { type: 'webserviceendpoint',
+alias: 'virksomhet:BehandleSak_v1',
+application: 'gsak',
+version: '7.0.8',
+environment: 'p' },
+'henvendelse' : { type: 'webserviceendpoint',
+alias: 'virksomhet:Dialog_v1',
+application: 'henvendelse',
+version: '8.10.1',
+environment: 'p' },
+'norg2' : { type: 'webserviceendpoint',
+alias: 'virksomhet:OrganisasjonEnhet_v1',
+application: 'norg2',
+version: '1.9.0',
+environment: 'p' },
+'ereg' : { type: 'webserviceendpoint',
+alias: 'virksomhet:Organisasjon_v4',
+application: 'ereg',
+version: '4.0.7',
+environment: 'p' }
+
+
     "nodes": [],
     "selftest": "/gosys/internal/selftest",
     "cluster": {

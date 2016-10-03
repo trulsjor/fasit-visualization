@@ -2,6 +2,7 @@
 
 
 
+
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
     width = 2000 - margin.right - margin.left,
@@ -24,8 +25,9 @@ var svg = d3.select("body").append("svg")
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var p = new URLSearchParams(location.search);
 // load the external data
-d3.json("http://localhost:3000/app/gosys.p.p", function (error, root) {
+d3.json(`http://localhost:3000/app/${p.get('app')}.${p.get('envClass')}.${p.get('env')}`, function (error, root) {
     console.log(root);
     update(root);
 });
