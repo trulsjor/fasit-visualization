@@ -41,7 +41,19 @@ var tip = d3.tip()
             "<div> Type: <span style='color:lightblue'>"+ d.environment+"</span></div>";
     })
 
+var linktip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+        return d.target.resources
+            .map(function (resource){
+                return "<div> Alias: <span style='color:lightblue'>"+ resource.alias+"</span></div> " + "<div> Type: <span style='color:lightblue'>"+ resource.type+"</span></span> "
+                })
+            .join("<p> ");
+    })
+
 svg.call(tip);
+svg.call(linktip);
 
 function update(source) {
 
@@ -127,6 +139,40 @@ function update(source) {
     link.enter().insert("path", "g")
         .attr("class", function(d){ return d.target.direction=="uses" ? "linkyes": "linkno"})
         .attr("d", diagonal);
+
+    link.enter().append("path")
+        .attr("d", d3.svg.symbol()
+            .size( function(d) { return 25*25 })
+            .type( function(d) { return "circle"}))
+        .attr("transform", function (d) {
+            return "translate(" +
+                ((d.source.y + d.target.y)/2) + "," +
+                ((d.source.x + d.target.x)/2) + ")"
+        })
+        .on('mouseover', linktip.show)
+        .on('mouseout', linktip.hide)
+        .style("fill", "#ccc")
+
+
+    link.enter().append("text")
+        .attr("dx", "-0.3em")
+        .attr("dy", "0.3em")
+        .attr("text-anchor", "left")
+        .attr("transform", function (d) {
+            return "translate(" +
+                ((d.source.y + d.target.y)/2) + "," +
+                ((d.source.x + d.target.x)/2) + ")"
+        })
+        .text(function (d) {
+            console.log(d.target.resources.length)
+            return d.target.resources.length;
+        })
+        .on('mouseover', linktip.show)
+        .on('mouseout', linktip.hide)
+        .style("fill", "#000")
+        .style("font-weight","bold")
+        .style("font-size", "14px")
+        .style("font-family", "sans-serif");
 
 
 }

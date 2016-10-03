@@ -6,8 +6,6 @@ app.use(express.static('public'))
 
 app.get('/app/:app.:envclass.:env', function (req, res) {
 
-
-
     var uri = 'https://fasit.adeo.no/api/v2/applicationinstances?' +
         'environment=' + req.params.env +
         '&environmentclass=' + req.params.envclass +
