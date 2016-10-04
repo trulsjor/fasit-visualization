@@ -29,7 +29,8 @@ var p = new URLSearchParams(location.search);
 // load the external data
 d3.json(`http://localhost:3000/app/${p.get('app')}/${p.get('env')}`, function (error, root) {
     console.log(root);
-    update(root);
+    update(root, "neededBy");
+    update(root,"needs");
 });
 
 var tip = d3.tip()
@@ -55,16 +56,24 @@ var linktip = d3.tip()
 svg.call(tip);
 svg.call(linktip);
 
-function update(source) {
 
+function update(source, direction) {
+
+
+    tree.children(function(d){
+        return d[direction];
+    })
     // Compute the new tree layout.
     var nodes = tree.nodes(source),
         links = tree.links(nodes);
 
     // Normalize for fixed-depth.
     nodes.forEach(function (d) {
-        console.log(d, d.depth);
-        d.y = d.depth * 400;
+        if (direction === "neededBy"){
+            d.y = 400 - (d.depth * 400);
+        }else{
+            d.y = 400 + (d.depth * 400);
+        }
     });
 
     // Declare the nodes…
@@ -77,6 +86,7 @@ function update(source) {
     var nodeEnter = node.enter().append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
+            console.log(d.application +" : " + d.y);
             return "translate(" + d.y + "," + d.x + ")";
         });
 
