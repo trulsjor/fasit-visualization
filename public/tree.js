@@ -27,7 +27,7 @@ var svg = d3.select("body").append("svg")
 
 var p = new URLSearchParams(location.search);
 // load the external data
-d3.json(`http://localhost:3000/app/${p.get('app')}.${p.get('envClass')}.${p.get('env')}`, function (error, root) {
+d3.json(`http://localhost:3000/app/${p.get('app')}/${p.get('env')}`, function (error, root) {
     console.log(root);
     update(root);
 });
@@ -97,10 +97,13 @@ function update(source) {
     nodeEnter.append("path")
         .attr("d", d3.svg.symbol()
             .size( function(d) { return 30*30 })
-            .type( function(d) { return getType(d)}))
+            .type( function(d) { return "circle"}))
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide)
         .attr("class", function(d){ return d.application=="gsak"? "nodeYes": "nodeNo"})
+        .on("click",  function(d){
+            location.search=`app=${d.application}&env=${d.environment}`;
+        });
 
 
 

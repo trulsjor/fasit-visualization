@@ -4,13 +4,14 @@ var request = require('request-promise')
 
 app.use(express.static('public'))
 
-app.get('/app/:app.:envclass.:env', function (req, res) {
+
+app.get('/app/:app/:env', function (req, res) {
+
+
 
     var uri = 'https://fasit.adeo.no/api/v2/applicationinstances?' +
         'environment=' + req.params.env +
-        '&environmentclass=' + req.params.envclass +
-        '&application=' + req.params.app
-    '&usage=true';
+        '&application=' + req.params.app +'&usage=true';
 
 
     console.log(uri);
@@ -29,7 +30,7 @@ app.get('/app/:app.:envclass.:env', function (req, res) {
                 .then(values => {
                     answer.children = values
                         .filter(entry => entry.application)
-                        .reduce(function (memo = [], entry) {
+                        .reduce(function (memo, entry) {
                             for (i = 0; i < memo.length; i++){
                                 if (memo[i].application === entry.application){
                                     memo[i].resources.push({
@@ -39,17 +40,8 @@ app.get('/app/:app.:envclass.:env', function (req, res) {
                                     return memo;
                                 }
                             }
-                            //optimizing the following code is left as an excercise for the reader.
-                            memo.push({
-                                application: entry.application,
-                                environment : entry.environment,
-                                version : entry.version,
-                                resources : [{
-                                    type: entry.type,
-                                    alias: entry.alias
-                                }]
-                            })
-                            console.log(memo);
+                            //optimizing the following co is left as an excercise for the reader.
+                            memo.push(toResource(entry))
                             return memo;
                         }, []);
 
@@ -58,6 +50,18 @@ app.get('/app/:app.:envclass.:env', function (req, res) {
         });
 });
 
+
+function toResource(entry) {
+    return {
+        application: entry.application,
+        environment: entry.environment,
+        version: entry.version,
+        resources: [{
+            type: entry.type,
+            alias: entry.alias
+        }]
+    };
+}
 
 function lookup(e) {
     return new Promise(
