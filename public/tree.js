@@ -5,8 +5,8 @@
 
 // ************** Generate the tree diagram	 *****************
 var margin = {top: 20, right: 120, bottom: 20, left: 120},
-    width = 2000 - margin.right - margin.left,
-    height = 1000 - margin.top - margin.bottom;
+    width = 1737 - margin.right - margin.left,
+    height = 1050 - margin.top - margin.bottom;
 
 var i = 0;
 
@@ -37,9 +37,9 @@ var tip = d3.tip()
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-        return "<div> ID: <span style='color:lightblue'>"+ d.application+"</span></div> " +
-            "<div> Miljø: <span style='color:lightblue'>"+ d.version+"</span></span> " +
-            "<div> Type: <span style='color:lightblue'>"+ d.environment+"</span></div>";
+        return "<div> Applikasjon: <span style='color:lightblue'>"+ d.application+"</span></div> " +
+            "<div> Versjon: <span style='color:lightblue'>"+ d.version+"</span></span> " +
+            "<div> Miljø: <span style='color:lightblue'>"+ d.environment+"</span></div>";
     })
 
 var linktip = d3.tip()
@@ -57,8 +57,11 @@ svg.call(tip);
 svg.call(linktip);
 
 
+
+
 function update(source, direction) {
 
+    var root;
 
     tree.children(function(d){
         return d[direction];
@@ -70,47 +73,41 @@ function update(source, direction) {
     // Normalize for fixed-depth.
     nodes.forEach(function (d) {
         if (direction === "neededBy"){
-            d.y = 400 - (d.depth * 400);
+            d.y = (width/2) - (d.depth * 400);
         }else{
-            d.y = 400 + (d.depth * 400);
+            d.y = (width/2) + (d.depth * 400);
         }
     });
+
 
     // Declare the nodes…
     var node = svg.selectAll("g.node")
         .data(nodes, function (d) {
+            root = nodes[0];
             return d.id || (d.id = ++i);
         });
+
+    function nodeType(d){
+        return d.id == root.id ? "root" :  direction;
+    
+    }
 
     // Enter the nodes.
     var nodeEnter = node.enter().append("g")
         .attr("class", "node")
         .attr("transform", function (d) {
-            console.log(d.application +" : " + d.y);
+            console.log(d.application + " is " + nodeType(d));
             return "translate(" + d.y + "," + d.x + ")";
         });
 
 
-    function getType(d) {
-        switch (d.type) {
-            case "baseurl" :
-                return "circle";
-            case "webserviceendpoint" :
-                return "cross";
-            case "deploymentmanager" :
-                return "diamond";
-            default:
-                return "square";
-        }
-    }
-
     nodeEnter.append("path")
         .attr("d", d3.svg.symbol()
-            .size( function(d) { return 30*30 })
+            .size( function(d) { return nodeType(d)==="root" ? 80*80 :  30*30 })
             .type( function(d) { return "circle"}))
         .on('mouseover', tip.show)
         .on('mouseout', tip.hide)
-        .attr("class", function(d){ return d.application=="gsak"? "nodeYes": "nodeNo"})
+        .attr("class", function(d){ return nodeType(d)})
         .on("click",  function(d){
             location.search=`app=${d.application}&env=${d.environment}`;
         });
@@ -118,29 +115,36 @@ function update(source, direction) {
 
 
     nodeEnter.append("text")
-        .attr("x", function (d) {
-            return d.children ? -20 : 20;
+        .attr("dx", function (d) {
+            if (nodeType(d)==="root"){
+                return "0em";
+            }else if (nodeType(d) === "neededBy"){
+                return "-1.6em";
+            }else{
+                return "1.6em";
+            }
         })
-        .attr("dy", ".35em")
+        .attr("dy", function (d) {
+            if (nodeType(d)==="root"){
+                return "-3.5em";
+            }else{
+                return "0.35em";
+            }
+        })
         .attr("text-anchor", function (d) {
-            return d.children  ? "end" : "start";
+            if (nodeType(d)==="root"){
+                return "middle";
+            }else if (nodeType(d) === "neededBy"){
+                return "end"
+            }else{
+                return "start";
+            }
         })
         .text(function (d) {
-            return d.children ? d.application : d.application;
+            return  d.application;
         })
         .style("fill", "#BEBEBE");
 
-    nodeEnter.append("text")
-        .attr("dx", "2.2em")
-        .attr("dy", "0.50em")
-        .attr("text-anchor", "left")
-        .text(function (d) {
-            return "";
-        })
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
-        .style("fill", "#ccc")
-        .style("font-weight","bold")
 
     // Declare the links…
     var link = svg.selectAll("path.link")
@@ -148,9 +152,35 @@ function update(source, direction) {
             return d.target.id;
         });
 
+
+    svg.append("defs").append("marker")
+        .attr("id", "arrowhead")
+        .attr("refX", 11)
+        .attr("refY", 2)
+        .attr("class", "greenarrow")
+        .attr("markerWidth", 8)
+        .attr("markerHeight", 8)
+        .attr("orient", "auto")
+        .append("path").attr("d", "M 0, 0 V4 L4, 2 Z");
+
+
+    svg.append("defs").append("marker")
+        .attr("id", "rotatedarrowhead")
+        .attr("refX", -7)
+        .attr("refY", 1.8)
+        .attr("class", "pinkarrow")
+        .attr("markerWidth", 22)
+        .attr("markerHeight", 22)
+        .attr("orient", 0)
+        .attr("transform", "translate(200 ,200)")
+        .append("path").attr("d", "M 0,0 V4 L4, 2 Z");
+
     // Enter the links.
     link.enter().insert("path", "g")
-        .attr("class", function(d){ return d.target.direction=="uses" ? "linkyes": "linkno"})
+        .attr("class", function(d){ return nodeType(d.target) + " lenke"})
+        .attr("marker-end", function(d){
+            return nodeType(d) === "needs" ? "url(#arrowhead)" :  "url(#rotatedarrowhead)";
+        })
         .attr("d", diagonal);
 
     link.enter().append("path")
@@ -177,7 +207,6 @@ function update(source, direction) {
                 ((d.source.x + d.target.x)/2) + ")"
         })
         .text(function (d) {
-            console.log(d.target.resources.length)
             return d.target.resources.length;
         })
         .on('mouseover', linktip.show)
